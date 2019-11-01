@@ -70,10 +70,6 @@ configure_file(
 	"${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
  	IMMEDIATE @ONLY)
 
-add_custom_target(uninstall
-	COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
-
-
 install (FILES
 			"${CMAKE_CURRENT_BINARY_DIR}/sigc++config.h"
 		DESTINATION
@@ -109,14 +105,4 @@ configure_package_config_file (
     "cmake/sigc++-3Config.cmake.in"
     "${PROJECT_CONFIG}"
     INSTALL_DESTINATION "${CONFIG_INSTALL_DIR}"
-)
-
-install (
-    FILES "${PROJECT_CONFIG}" "${VERSION_CONFIG}"
-    DESTINATION "${CONFIG_INSTALL_DIR}"
-)
-
-install (
-    EXPORT "${TARGETS_EXPORT_NAME}"
-    DESTINATION "${CONFIG_INSTALL_DIR}"
 )
